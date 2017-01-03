@@ -1,30 +1,25 @@
 package com.github.vitalibo.brickgame;
 
 
+import com.github.vitalibo.brickgame.core.Controller;
+import com.github.vitalibo.brickgame.core.Kernel;
 import com.github.vitalibo.brickgame.core.ui.BrickGameFrame;
+import com.github.vitalibo.brickgame.game.Game;
+import com.github.vitalibo.brickgame.game.Menu;
 
 public class Run {
 
-    public static void main(String[] args) throws InterruptedException {
+    static {
+        @SuppressWarnings("unchecked")
+        Class<? extends Game>[] GAMES = new Class[]{
+        };
+        Menu.setGames(GAMES);
+    }
+
+    public static void main(String[] args) {
         BrickGameFrame frame = new BrickGameFrame();
-        boolean[][] canvas = new boolean[20][10];
-        int x = 0, y = -1;
-
-        while (true) {
-            if (++y >= 20) {
-                y = 0;
-                if (++x >= 10) {
-                    x = 0;
-                }
-            }
-
-            canvas[y][x] = true;
-            frame.getFrame().draw(canvas);
-            canvas[y][x] = false;
-            frame.getScore().inc();
-
-            Thread.sleep(50);
-        }
+        Controller controller = new Controller(frame, new Kernel());
+        controller.init(Menu.class);
     }
 
 }

@@ -1,6 +1,7 @@
 package com.github.vitalibo.brickgame.core.ui;
 
 import com.github.vitalibo.brickgame.core.Number;
+import lombok.SneakyThrows;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -60,12 +61,9 @@ public class NumberPanel extends JPanel implements Number {
             .forEach(entry -> sequence[entry.getKey()].set(entry.getValue()));
     }
 
+    @SneakyThrows(IOException.class)
     private static Image resourceAsImage(String resource) {
-        try {
-            return ImageIO.read(ClassLoader.getSystemResourceAsStream(resource));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        return ImageIO.read(ClassLoader.getSystemResourceAsStream(resource));
     }
 
     static class Digit extends JPanel implements Number {
@@ -85,10 +83,12 @@ public class NumberPanel extends JPanel implements Number {
                 throw new IllegalArgumentException("The value must be in the range 0 - 9.");
             }
 
-            if (this.value != value) {
-                this.value = value;
-                repaint();
+            if (this.value == value) {
+                return;
             }
+
+            this.value = value;
+            repaint();
         }
 
         @Override

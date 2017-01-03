@@ -44,7 +44,9 @@ public class NumberPanelTest {
 
     @DataProvider
     public Object[][] samplesMaxValue() {
-        return new Object[][]{{10}, {99}, {100}, {999}};
+        return new Object[][]{
+            {10}, {99}, {100}, {999}
+        };
     }
 
     @Test(dataProvider = "samplesMaxValue")

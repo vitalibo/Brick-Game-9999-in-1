@@ -1,4 +1,4 @@
-package com.github.vitalibo.brickgame.core;
+package com.github.vitalibo.brickgame.util;
 
 import lombok.Getter;
 import lombok.Setter;

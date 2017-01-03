@@ -56,12 +56,15 @@ public class DigitTest {
         spyDigit.set(value);
         spyDigit.paintComponent(mockGraphics);
 
-        Mockito.verify(mockGraphics).drawImage(Mockito.notNull(), Mockito.eq(0), Mockito.eq(0), Mockito.eq(null));
+        Mockito.verify(mockGraphics).drawImage(
+            Mockito.notNull(), Mockito.eq(0), Mockito.eq(0), Mockito.eq(null));
     }
 
     @DataProvider
     public Object[][] samplesIllegalValue() {
-        return new Object[][]{{-1}, {10}};
+        return new Object[][]{
+            {-1}, {10}
+        };
     }
 
     @Test(dataProvider = "samplesIllegalValue", expectedExceptions = IllegalArgumentException.class)

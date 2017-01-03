@@ -1,5 +1,7 @@
 package com.github.vitalibo.brickgame.core;
 
+import com.github.vitalibo.brickgame.util.Builder;
+
 public interface State {
 
     default boolean change() {

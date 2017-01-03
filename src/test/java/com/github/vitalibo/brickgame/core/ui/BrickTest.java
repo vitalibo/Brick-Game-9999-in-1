@@ -35,8 +35,9 @@ public class BrickTest {
 
     @DataProvider
     public Object[][] samples() {
-        return new Object[][]
-            {{false, new Color(0x61705B)}, {true, new Color(0x000000)}};
+        return new Object[][]{
+            {false, new Color(0x61705B)}, {true, new Color(0x000000)}
+        };
     }
 
     @Test(dataProvider = "samples")

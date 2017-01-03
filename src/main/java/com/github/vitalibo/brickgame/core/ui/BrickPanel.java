@@ -1,14 +1,15 @@
 package com.github.vitalibo.brickgame.core.ui;
 
-import com.github.vitalibo.brickgame.core.Builder;
-import com.github.vitalibo.brickgame.core.Grid;
+import com.github.vitalibo.brickgame.core.Canvas;
 import com.github.vitalibo.brickgame.core.State;
+import com.github.vitalibo.brickgame.util.BooleanCollector;
+import com.github.vitalibo.brickgame.util.Builder;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.stream.IntStream;
 
-public class BrickPanel extends JPanel implements Grid {
+public class BrickPanel extends JPanel implements Canvas {
 
     private static final Color ON = new Color(0x000000);
     private static final Color OFF = new Color(0x61705B);
@@ -41,6 +42,15 @@ public class BrickPanel extends JPanel implements Grid {
                 .forEach(w -> bricks[h][w].set(src[h][w])));
     }
 
+    @Override
+    public synchronized boolean[][] get() {
+        return IntStream.range(0, height)
+            .mapToObj(h -> IntStream.range(0, width)
+                .mapToObj(w -> bricks[h][w].get())
+                .collect(BooleanCollector.toArray()))
+            .collect(BooleanCollector.toTwoDimensionalArray());
+    }
+
     static class Brick extends JPanel implements State {
 
         private boolean state;
@@ -56,10 +66,12 @@ public class BrickPanel extends JPanel implements Grid {
 
         @Override
         public void set(boolean state) {
-            if (this.state != state) {
-                this.state = state;
-                repaint();
+            if (this.state == state) {
+                return;
             }
+
+            this.state = state;
+            repaint();
         }
 
         @Override

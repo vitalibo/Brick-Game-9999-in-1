@@ -1,6 +1,7 @@
 package com.github.vitalibo.brickgame.core.ui;
 
 import com.github.vitalibo.brickgame.core.State;
+import lombok.SneakyThrows;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -29,10 +30,12 @@ public class IconPanel extends JPanel implements State {
 
     @Override
     public synchronized void set(boolean state) {
-        if (this.state != state) {
-            this.state = state;
-            repaint();
+        if (this.state == state) {
+            return;
         }
+
+        this.state = state;
+        repaint();
     }
 
     @Override
@@ -41,12 +44,9 @@ public class IconPanel extends JPanel implements State {
         this.getComponent(0).setPreferredSize(preferredSize);
     }
 
+    @SneakyThrows(IOException.class)
     private static Image resourceAsImage(String resource) {
-        try {
-            return ImageIO.read(ClassLoader.getSystemResourceAsStream(String.format("ui/%s.bmp", resource)));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        return ImageIO.read(ClassLoader.getSystemResourceAsStream(String.format("ui/%s.bmp", resource)));
     }
 
     private class Canvas extends JPanel {

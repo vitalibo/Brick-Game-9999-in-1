@@ -1,8 +1,9 @@
 package com.github.vitalibo.brickgame.core;
 
-@FunctionalInterface
-public interface Grid {
+public interface Canvas {
 
     void draw(boolean[][] src);
+
+    boolean[][] get();
 
 }

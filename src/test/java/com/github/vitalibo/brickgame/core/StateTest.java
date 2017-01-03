@@ -16,7 +16,9 @@ public class StateTest {
 
     @DataProvider
     public Object[][] samples() {
-        return new Object[][]{{true}, {false}};
+        return new Object[][]{
+            {true}, {false}
+        };
     }
 
     @Test(dataProvider = "samples")

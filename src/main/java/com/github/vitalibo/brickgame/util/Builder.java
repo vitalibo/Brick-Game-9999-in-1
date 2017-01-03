@@ -1,4 +1,4 @@
-package com.github.vitalibo.brickgame.core;
+package com.github.vitalibo.brickgame.util;
 
 import java.util.function.Consumer;
 import java.util.function.Function;

@@ -1,6 +1,6 @@
 package com.github.vitalibo.brickgame.core.ui;
 
-import com.github.vitalibo.brickgame.core.Builder;
+import com.github.vitalibo.brickgame.util.Builder;
 import lombok.Getter;
 
 import javax.swing.*;
@@ -10,9 +10,9 @@ import java.awt.*;
 public class BrickGameFrame extends JFrame {
 
     @Getter
-    private final BrickPanel frame;
+    private final BrickPanel board;
     @Getter
-    private final BrickPanel support;
+    private final BrickPanel preview;
     @Getter
     private final NumberPanel score;
     @Getter
@@ -26,8 +26,8 @@ public class BrickGameFrame extends JFrame {
 
     public BrickGameFrame() {
         super("Brick Game");
-        this.frame = new BrickPanel(10, 20);
-        this.support = new BrickPanel(4, 4);
+        this.board = new BrickPanel(10, 20);
+        this.preview = new BrickPanel(4, 4);
         this.score = new NumberPanel(6);
         this.speed = new NumberPanel(2, 18);
         this.level = new NumberPanel(2, 18);
@@ -63,7 +63,7 @@ public class BrickGameFrame extends JFrame {
     private JPanel root() {
         return Builder.of(new JPanel())
             .with(root -> root.setOpaque(false))
-            .with(root -> Builder.of(frame)
+            .with(root -> Builder.of(board)
                 .with(frame -> frame.setBorder(new LineBorder(new Color(0x0), 1)))
                 .with(root::add))
             .with(root -> panel(new GridLayout(0, 1))
@@ -72,7 +72,7 @@ public class BrickGameFrame extends JFrame {
                     .with(o -> o.add(score))
                     .with(panel::add))
                 .with(panel -> panel(new FlowLayout(FlowLayout.CENTER, 0, 0))
-                    .with(o -> o.add(support))
+                    .with(o -> o.add(preview))
                     .with(panel::add))
                 .with(panel -> panel(new GridLayout(0, 1))
                     .with(o -> o.add(label("Speed", JLabel.CENTER)))
