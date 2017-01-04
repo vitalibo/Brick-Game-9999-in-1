@@ -32,9 +32,16 @@ public final class Shape implements Function<Point, Stream<Point>> {
     }
 
     public static Shape of(int width, int... values) {
-        boolean[][] shape = CanvasTranslator.from(width, values);
+        return of(CanvasTranslator.from(width, values));
+    }
+
+    public static Shape of(String resource) {
+        return of(CanvasTranslator.from(resource));
+    }
+
+    public static Shape of(boolean[][] shape) {
         return new Shape(IntStream.range(0, shape.length)
-            .mapToObj(y -> IntStream.range(0, width)
+            .mapToObj(y -> IntStream.range(0, shape[y].length)
                 .filter(x -> shape[y][x])
                 .mapToObj(x -> Point.of(y, x)))
             .flatMap(stream -> stream)

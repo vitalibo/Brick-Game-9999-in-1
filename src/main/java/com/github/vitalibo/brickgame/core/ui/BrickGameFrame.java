@@ -29,8 +29,8 @@ public class BrickGameFrame extends JFrame {
         this.board = new BrickPanel(10, 20);
         this.preview = new BrickPanel(4, 4);
         this.score = new NumberPanel(6);
-        this.speed = new NumberPanel(2, 18);
-        this.level = new NumberPanel(2, 18);
+        this.speed = new NumberPanel(2, 15);
+        this.level = new NumberPanel(2, 15);
         this.sound = Builder.of(new IconPanel("sound_on", "sound_off", true))
             .with(i -> i.setPreferredSize(new Dimension(16, 16)))
             .get();

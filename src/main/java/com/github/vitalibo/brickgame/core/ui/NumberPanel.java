@@ -57,7 +57,7 @@ public class NumberPanel extends JPanel implements Number {
 
         IntStream.range(0, sequence.length)
             .mapToObj(i -> new AbstractMap.SimpleEntry<>(i, 0))
-            .peek(entry -> entry.setValue((value / (int) Math.pow(10, sequence.length - entry.getKey() - 1)) % 10))
+            .peek(entry -> entry.setValue((this.value / (int) Math.pow(10, sequence.length - entry.getKey() - 1)) % 10))
             .forEach(entry -> sequence[entry.getKey()].set(entry.getValue()));
     }
 

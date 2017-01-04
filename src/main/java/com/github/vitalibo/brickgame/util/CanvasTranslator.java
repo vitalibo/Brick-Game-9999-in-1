@@ -3,6 +3,9 @@ package com.github.vitalibo.brickgame.util;
 import com.github.vitalibo.brickgame.game.Point;
 import lombok.experimental.UtilityClass;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.stream.Stream;
 
@@ -40,6 +43,17 @@ public final class CanvasTranslator {
         }
 
         return binary;
+    }
+
+    public static boolean[][] from(String resource) {
+        InputStream stream = ClassLoader.getSystemClassLoader().getResourceAsStream(resource);
+        return new BufferedReader(new InputStreamReader(stream))
+            .lines()
+            .map(CharSequence::chars)
+            .map(chars -> chars
+                .mapToObj(i -> Character.toChars(i)[0] != '0')
+                .collect(BooleanCollector.toArray()))
+            .collect(BooleanCollector.toTwoDimensionalArray());
     }
 
 }

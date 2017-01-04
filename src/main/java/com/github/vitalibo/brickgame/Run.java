@@ -6,12 +6,14 @@ import com.github.vitalibo.brickgame.core.Kernel;
 import com.github.vitalibo.brickgame.core.ui.BrickGameFrame;
 import com.github.vitalibo.brickgame.game.Game;
 import com.github.vitalibo.brickgame.game.Menu;
+import com.github.vitalibo.brickgame.game.snake.SnakeGame;
 
 public class Run {
 
     static {
         @SuppressWarnings("unchecked")
         Class<? extends Game>[] GAMES = new Class[]{
+            SnakeGame.class
         };
         Menu.setGames(GAMES);
     }

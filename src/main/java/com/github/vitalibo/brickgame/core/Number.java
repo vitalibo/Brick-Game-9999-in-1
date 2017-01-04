@@ -16,6 +16,7 @@ public interface Number {
         return Builder.of(get())
             .map(v -> v + h)
             .with(this::set)
+            .map(v -> get())
             .get();
     }
 

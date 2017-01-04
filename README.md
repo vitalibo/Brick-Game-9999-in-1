@@ -27,15 +27,15 @@ launch game
 
 ##### View
 
-![](docs/img/sR35V1.gif)
+![](docs/img/sR35V1.gif) ![](docs/img/IFREtC.gif)
 
 - Board panel `capacity [20x10]`
 - Preview panel `capacity [4x4]`
 - Score `max 999999`
-- Speed `max 18`
-- Level `max 18`
+- Speed `max 15`
+- Level `max 15`
 - Sound `on/off`
 - Pause `on/off`
 
 ### Games
-
+- `0001` Snake

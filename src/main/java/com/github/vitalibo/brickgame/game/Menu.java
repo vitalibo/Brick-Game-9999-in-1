@@ -31,7 +31,7 @@ public class Menu extends Game {
         POSITIONS = new Point[]{Point.of(14, 5), Point.of(10, 1), Point.of(5, 5), Point.of(1, 1)};
     }
 
-    private int value;
+    private static int value;
 
     public Menu(Context context) {
         super(context);
