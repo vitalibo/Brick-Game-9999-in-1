@@ -87,6 +87,7 @@ public class Kernel extends Timer implements Map<String, Kernel.Job> {
 
             if (--countdown < 0) {
                 this.kill();
+                // TODO : fix NullPointerException
                 finalize.accept(this);
                 return;
             }
