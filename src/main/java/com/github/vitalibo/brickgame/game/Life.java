@@ -21,7 +21,7 @@ public class Life implements Number {
 
     @Override
     public void set(int value) {
-        if (this.value == value) {
+        if (this.value == value && value != 0) {
             return;
         }
 

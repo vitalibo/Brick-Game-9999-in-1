@@ -27,7 +27,7 @@ launch game
 
 ##### View
 
-![](docs/img/sR35V1.gif) ![](docs/img/IFREtC.gif) ![](docs/img/bUdlw7.gif)
+![](docs/img/sR35V1.gif) ![](docs/img/IFREtC.gif) ![](docs/img/bUdlw7.gif) ![](docs/img/x82Vbe.gif)
 
 - Board panel `capacity [20x10]`
 - Preview panel `capacity [4x4]`
@@ -40,3 +40,4 @@ launch game
 ### Games
 - `0001` Snake
 - `0002` Race
+- `0003` Tetris

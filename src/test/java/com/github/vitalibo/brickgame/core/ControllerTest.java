@@ -29,6 +29,8 @@ public class ControllerTest {
     @Mock
     private BrickPanel mockBoard;
     @Mock
+    private BrickPanel mockPreview;
+    @Mock
     private KeyEvent mockKeyEvent;
     @Spy
     private Kernel spyKernel;
@@ -41,6 +43,7 @@ public class ControllerTest {
         Mockito.when(mockFrame.getPause()).thenReturn(mockPause);
         Mockito.when(mockFrame.getSound()).thenReturn(mockSound);
         Mockito.when(mockFrame.getBoard()).thenReturn(mockBoard);
+        Mockito.when(mockFrame.getPreview()).thenReturn(mockPreview);
         spyController = Mockito.spy(new Controller(mockFrame, spyKernel));
         spyController.init(EmbeddedGame.class);
     }

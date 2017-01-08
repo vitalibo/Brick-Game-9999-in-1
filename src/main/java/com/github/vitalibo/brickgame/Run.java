@@ -8,6 +8,7 @@ import com.github.vitalibo.brickgame.game.Game;
 import com.github.vitalibo.brickgame.game.Menu;
 import com.github.vitalibo.brickgame.game.race.RaceGame;
 import com.github.vitalibo.brickgame.game.snake.SnakeGame;
+import com.github.vitalibo.brickgame.game.tetris.TetrisGame;
 
 public class Run {
 
@@ -15,7 +16,8 @@ public class Run {
         @SuppressWarnings("unchecked")
         Class<? extends Game>[] GAMES = new Class[]{
             SnakeGame.class,
-            RaceGame.class
+            RaceGame.class,
+            TetrisGame.class
         };
         Menu.setGames(GAMES);
     }

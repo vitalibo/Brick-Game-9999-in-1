@@ -57,6 +57,15 @@ public class LifeTest {
         Mockito.verify(mockCanvas, Mockito.never()).draw(Mockito.any(boolean[][].class));
     }
 
+    @Test
+    public void cleanUp() {
+        life.set(0);
+        Mockito.reset(mockCanvas);
+
+        life.set(0);
+        Mockito.verify(mockCanvas).draw(Mockito.any(boolean[][].class));
+    }
+
     private static boolean[][] expected(int... values) {
         return CanvasTranslator.from(4, values);
     }
