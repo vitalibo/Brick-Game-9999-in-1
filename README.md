@@ -27,7 +27,7 @@ launch game
 
 ##### View
 
-![](docs/img/sR35V1.gif) ![](docs/img/IFREtC.gif) ![](docs/img/bUdlw7.gif) ![](docs/img/x82Vbe.gif)
+![](https://raw.githubusercontent.com/vitalibo/Brick-Game-9999-in-1/assets/docs/img/sR35V1.gif) ![](https://raw.githubusercontent.com/vitalibo/Brick-Game-9999-in-1/assets/docs/img/IFREtC.gif) ![](https://raw.githubusercontent.com/vitalibo/Brick-Game-9999-in-1/assets/docs/img/bUdlw7.gif) ![](https://raw.githubusercontent.com/vitalibo/Brick-Game-9999-in-1/assets/docs/img/x82Vbe.gif)
 
 - Board panel `capacity [20x10]`
 - Preview panel `capacity [4x4]`
