@@ -29,6 +29,8 @@ launch game
 
 ![](https://raw.githubusercontent.com/vitalibo/Brick-Game-9999-in-1/assets/docs/img/sR35V1.gif) ![](https://raw.githubusercontent.com/vitalibo/Brick-Game-9999-in-1/assets/docs/img/IFREtC.gif) ![](https://raw.githubusercontent.com/vitalibo/Brick-Game-9999-in-1/assets/docs/img/bUdlw7.gif) ![](https://raw.githubusercontent.com/vitalibo/Brick-Game-9999-in-1/assets/docs/img/x82Vbe.gif)
 
+![](https://raw.githubusercontent.com/vitalibo/Brick-Game-9999-in-1/assets/docs/img/AwX9jY.gif)
+
 - Board panel `capacity [20x10]`
 - Preview panel `capacity [4x4]`
 - Score `max 999999`
@@ -41,3 +43,4 @@ launch game
 - `0001` Snake
 - `0002` Race
 - `0003` Tetris
+- `0004` Shoot
