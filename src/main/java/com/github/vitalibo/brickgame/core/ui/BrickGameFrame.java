@@ -45,7 +45,11 @@ public class BrickGameFrame extends JFrame {
         this.setContentPane(root());
         this.pack();
         try {
+        if(System.getProperty("os.name").startsWith("Windows")) {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+        } else if(System.getProperty("os.name").startsWith("Linux")) {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.gtk.GTKLookAndFeel");
+        }
             SwingUtilities.updateComponentTreeUI(this);
         } catch (Exception e) {
             throw new RuntimeException(e);
